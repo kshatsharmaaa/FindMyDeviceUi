@@ -1,9 +1,14 @@
-
 @import "tailwindcss";
 @tailwind utilities;
 
+
+html,
+body {
+  @apply transition-colors duration-300 ease-in-out;
+}
+
+
 @layer utilities {
-  /* Animations */
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -46,7 +51,7 @@
   }
 }
 
-/* Scrollbar styling */
+/* ---------- SCROLLBAR ---------- */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -63,4 +68,78 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
+}
+
+/* ---------- DARK MODE ---------- */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Base */
+body {
+  @apply bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+}
+
+
+.dark .bg-white {
+  background-color: #1f2937;
+}
+
+.dark .bg-gray-50 {
+  background-color: #1f2937; 
+}
+
+.dark .bg-gray-100 {
+  background-color: #374151; 
+}
+
+
+.dark .text-gray-900 {
+  color: #f3f4f6; 
+}
+
+.dark .text-gray-700 {
+  color: #d1d5db; 
+}
+
+.dark .text-gray-600 {
+  color: #9ca3af; 
+}
+
+.dark .text-gray-500 {
+  color: #9ca3af; 
+}
+
+
+.dark .border-gray-200 {
+  border-color: #374151; 
+}
+
+.dark .border-gray-300 {
+  border-color: #4b5563; 
+}
+
+
+input {
+  @apply transition-colors duration-200;
+}
+
+.dark input {
+  background-color: #374151; 
+  border-color: #4b5563; 
+  color: #f3f4f6; 
+}
+
+.dark input::placeholder {
+  color: #9ca3af; 
+}
+
+
+button {
+  @apply transition-colors duration-200 ease-in-out;
+}
+
+
+.dark .bg-gray-900 {
+  background-color: #1f2937; 
 }
