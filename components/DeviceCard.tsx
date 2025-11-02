@@ -16,7 +16,7 @@ export default function DeviceCard({ device, isSelected, onClick }: DeviceCardPr
     if (lowerName.includes('phone') || lowerName.includes('pixel') || lowerName.includes('galaxy')) {
       return <Smartphone className="w-6 h-6" />;
     }
-    if (lowerName.includes('laptop') || lowerName.includes('macbook') || lowerName.includes('surface')) {
+    if (lowerName.includes('laptop') || lowerName.includes('macbook') || lowerName.includes('dell')) {
       return <Laptop className="w-6 h-6" />;
     }
     if (lowerName.includes('watch')) {

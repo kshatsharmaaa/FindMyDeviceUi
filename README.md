@@ -1,36 +1,109 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Find My Device UI 
 
-## Getting Started
+A responsive Find My Device UI clone built with Next.js, React, and Leaflet.js with dummy data.
 
-First, run the development server:
+## Features
 
+- 📱 Device dashboard with list view
+- 🗺️ Interactive map with device markers
+- 🔍 Device search and filtering
+- ⚡ Smooth animations and transitions
+- 📲 Device actions (Ring, Factory Reset)
+- 💅 Responsive design
+
+## Tech Stack
+
+- **Next.js 16** - React framework
+- **React** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Leaflet.js** - Interactive maps
+- **Lucide React** - Icons
+
+## Installation
+
+
+
+### Setup Steps
+
+1. **Create Next.js Project**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx create-next-app@latest find-my-device --typescript --tailwind --app --no-src-dir
+cd find-my-device
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install Dependencies**
+```bash
+npm install leaflet react-leaflet lucide-react
+npm install -D @types/leaflet
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Copy Project Files**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy all the files from the provided structure into your project directory.
 
-## Learn More
+4. **Run Development Server**
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+5. **Open Browser**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Navigate to `http://localhost:3000`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+```
+find-my-device/
+├── app/
+│   ├── layout.tsx           
+│   ├── page.tsx             
+│   └── globals.css          
+├── components/
+│   ├── DeviceList.tsx       
+│   ├── DeviceCard.tsx       
+│   ├── DeviceDetails.tsx    
+│   ├── MapView.tsx          
+│   ├── SearchBar.tsx        
+│   ├── ActionButtons.tsx    
+        
+├── lib/
+│   ├── deviceData.ts        # Dummy device data
+│   └── types.ts             # TypeScript types
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Usage
+
+### Features Overview
+
+1. **Device List**: View all devices in the left sidebar
+2. **Map View**: See device locations on an interactive map
+3. **Search**: Filter devices by name or location
+4. **Dark Mode**: Toggle between light and dark themes
+5. **Device Actions**: 
+   - Ring device (shows confirmation)
+   - Factory reset (with confirmation dialog)
+
+### Customization
+
+#### Adding More Devices
+
+Edit `lib/deviceData.ts`:
+
+```typescript
+export const devices: Device[] = [
+  {
+    id: 3,
+    name: "iPad Air",
+    location: "Los Angeles, USA",
+    lat: 34.0522,
+    lng: -118.2437,
+    battery: 65,
+    lastSeen: "2 hours ago",
+    status: "offline"
+  },
+  // Add more devices...
+];
+```
+
